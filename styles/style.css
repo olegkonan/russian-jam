@@ -7,16 +7,22 @@
   font-family: 'Ubuntu', sans-serif;
 }
 
-.main-nav {
+.header {
   height: 50px;
+}
+
+.main-nav {
+  position: fixed;
+  z-index: 1;
+  width: 100vw;
+  height: inherit;
+  background-color: white;
   display: flex;
   justify-content: center;
 }
 
 .main-nav__list {
-  width: 50%;
   display: flex;
-  justify-content: space-around;
   align-items: center;
 }
 
@@ -24,41 +30,55 @@
   list-style-type: none;
 }
 
+.main {
+  position: relative;
+}
+
 .wrapper {
   width: 95%;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .replica {
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  border-bottom: 1px solid;
+  border-top: 1px solid;
 }
 
 .id, .act, .scene {
-  width: 3%;
+  flex: 0 0 3%;
 }
 
 .character {
-  width: 20%;
+  min-width: 30%;
+  flex: 0 0 20%;
 }
 
 .text {
-  width: 71%;
+  flex: 0 1 auto;
   text-align: justify;
 }
 
+.description {
+  font-size: 0.8rem;
+}
+
 @media screen and (max-width: 500px) {
+  .header {
+    height: 70px;
+  }
   .id, .act, .scene {
     display: none;
   }
-  .character {
-    font-size: small;
-    width: 20%;
+  .main-nav {
+    height: 70px;
   }
-  .text {
-    font-size: small;
-    width: 80%;
+  .main-nav__list {
+    flex-direction: column;
+    justify-content: center;
   }
 }
