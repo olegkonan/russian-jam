@@ -21,3 +21,10 @@ mainElement.innerHTML = plot
     }
   })
   .join('');
+
+function savePosition() {
+  localStorage.setItem('offsetY', window.scrollY);
+}
+
+window.addEventListener('load', () => window.scrollTo(0, localStorage.getItem('offsetY') || 0));
+window.addEventListener('scroll', savePosition);
