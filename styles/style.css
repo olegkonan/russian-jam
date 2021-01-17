@@ -67,6 +67,10 @@
   font-size: 0.8rem;
 }
 
+.marked {
+  font-weight: bold;
+}
+
 @media screen and (max-width: 500px) {
   .header {
     height: 70px;
